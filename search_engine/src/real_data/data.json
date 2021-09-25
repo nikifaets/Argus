@@ -1,0 +1,47 @@
+{
+    "data": [
+        {
+            "description": "Tinder but for issues. At first everyone is out of their comfort zone and the impostor syndrome strikes when you expect it the least, wondering if you can handle a certain issue or should you just become a janitor? If that sounds familiar to you, then you might be this project's target audience. gitner (git + Tinder) matches you with the issue from a certain project that is most appropriate to you and your relevant experience! Making heavy use of the GitHub API in order to build the graph of users and their interactions with different repositories and issues. User and Items should be provided as training data, in our scenario, user is github users, while items would be opensource projects/repos with which each user has interacted before. As there are 2 crucial components in Github issues matching process: user and issues. Basically we need training data which includes the history of repos/issues/PRs with which each user has interacted.",
+            "knowledge_node_type": "Code repository",
+            "source": "GitHub, Science Conferences, Matching of interests",
+            "title": "Gitner - Tinder but for git issues",
+            "url": "https://github.com/VikVelev/Gitner",
+            "username": "VikVelev",
+            "data" : {
+                "code" : "const Discord = require('discord.js');const DiscordToken = require('./credentials')const client = new Discord.Client();client.once('ready', () => {console.log('Ready!');});client.on('message', message => {    if (message.content.startsWith('!gitner ')) {        let command = message.content.split('!gitner ')[1];        if (command.startsWith('match ')) {                        let project = command.split('match ')[1]            console.log(message.content);            const embed = new Discord.MessageEmbed()                .setTitle(Hey ${message.author.username}, I found this juicy issue just for your liking!)                .setAuthor('Gitner thinks this is best for you!', 'https://i.ibb.co/Fqw0Scq/Untitled-Diagram.jpg')                /*                * Alternatively, use '#00AE86', [0, 174, 134] or an integer number.                */                .setColor(0x00AE86)                .setDescription('This is the main body of text, it can hold 2048 characters.')                .setFooter('This is the footer text, it can hold 2048 characters', 'http://i.imgur.com/w1vhFSR.png')                .setImage('http://i.imgur.com/yVpymuV.png')                .setThumbnail('http://i.imgur.com/p2qNFag.png')                /*                * Takes a Date object, defaults to current date.                */                .setTimestamp()                .setURL('https://discord.js.org/#/docs/main/indev/class/RichEmbed')                .addField('This is a field title, it can hold 256 characters',                'This is a field value, it can hold 1024 characters.')                /*                * Inline fields may not display as inline if the thumbnail and/or image is too big.                */                .addField('Inline Field', 'They can also "
+            }
+        },
+        {
+            "description": "Implemented a java script wrapper for our Emotion Recognition engine. Gives developers easy access to the user's emotion. Added working React examples with comments. Callbacks and State Management Our module makes use of javascript proxies thanks to which the user will be notified each time the user's emotion changes. Developers can easily abstract their functionality into a callback which accepts the following arguments",
+            "knowledge_node_type": "Pull request",
+            "source": "GitHub, Pull Request, Implement wrapper, Emotion Recognition API, Java Script",
+            "title": "Implemented a Java Script wrapper module for the Emotion Recognition API",
+            "url": "https://github.com/VikVelev/EmotionTracker/pull/4",
+            "username": "VikVelev"
+        },
+        {
+            "description": "",
+            "knowledge_node_type": "",
+            "source": "",
+            "title": "",
+            "url": "",
+            "username": ""
+        },
+        {
+            "description": "",
+            "knowledge_node_type": "",
+            "source": "",
+            "title": "",
+            "url": "",
+            "username": ""
+        },
+        {
+            "description": "",
+            "knowledge_node_type": "",
+            "source": "",
+            "title": "",
+            "url": "",
+            "username": ""
+        }
+    ]
+}
