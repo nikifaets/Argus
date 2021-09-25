@@ -1,5 +1,5 @@
 from typing import List
-import ssl
+import re
 from elasticsearch import Elasticsearch
 from elasticsearch.connection import create_ssl_context
 from elasticsearch.connection.http_requests import RequestsHttpConnection
@@ -34,11 +34,10 @@ class ElasticSearchClient():
     def keyword_search(
         self, keywords: List[str],
         index_name: str = None,
-        page_size: int = 20) -> List[dict]:
-
+        page_size: int = 1) -> List[dict]:
         query = {
             "query_string" : {
-                "query": ' OR '.join(map(lambda x: f"({x})", keywords)),
+                "query": ' OR '.join(map(lambda x: f"({re.sub('[^0-9a-zA-Z]+', '*', x)})", keywords)),
                 "default_field": "*"
             }
         }
