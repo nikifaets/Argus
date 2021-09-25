@@ -1,0 +1,57 @@
+version: "2.0"
+
+nlu:
+- intent: action
+  examples: |
+    - Can you build this app
+    - Can you research this problem
+    - Can you analyze the data
+    - Can you check this ticket
+    - What this issue is about
+    - How can you set out this app
+    - let's develop the prototype
+    - I was thinking about launching the app 
+    - How long does it take to set up the mock-up
+    - this is our problem we want to resolve
+    - What other tasks do we have right now
+    - let's brainstorm about
+    - I propose to focus on
+    - we must adress this situation
+    - I encountered this obstacle
+    - we should dive in with this concern
+    - this is an important point we should take care of
+    - we face a lack of know-how
+    - the company confronts an unfamiliar market
+    - we run into a new period
+    - the business doesn't meet the expections 
+    - the department experiences a complex problem
+    - let's discuss more
+    - let's talk about how to address this obstacle
+    - I have this problem
+    - I am blocked
+    - How do you usually handle this
+
+- intent: else
+  examples: |
+    - How are you
+    - I talked with them about the party
+    - What are you doing on this weekend
+    - When do you want to meet
+    - I prefer to eat the lunch now
+    - nice to meet you
+    - should I send you the report
+    - can you ask him 
+    - let's go outside
+    - Tell me about your current role
+    - Do you have recommendations for books
+    - Beautiful day, isn't it
+    - Looking forward to the weekend
+    - Did you catch the news today
+    - it’s a nice break from the office
+    - how about we grab a coffee before we get down to business
+    - Do you know any good gym with a swimming pool near our office
+    - Are there any podcasts you love? 
+    - How was your day
+    - Your hair always looks great. What hair products do you use
+    - How’s your morning going so far?
+    - What are you currently working on
