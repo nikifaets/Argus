@@ -1,0 +1,26 @@
+{
+    "mappings": {
+        "dynamic": "strict",
+        "properties": {
+            "knowledge_node_type": {
+                "type": "text"
+            },
+            "source": {
+                "type": "text"
+            },
+            "url": {
+                "type": "keyword"
+            },
+            "title": {
+                "type": "keyword"
+            },
+            "data": {
+                "type": "object",
+                "dynamic": true
+            },
+            "lastUpdated" : {
+                "type": "date"
+            }
+        }
+    }
+}
