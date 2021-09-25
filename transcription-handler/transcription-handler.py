@@ -1,6 +1,8 @@
 import requests
 from flask import Flask, json, request
 
+from search_engine.src import ElasticSearchClient
+
 class TranscriptionHandler:
     knownKeywords = ['python', 'working']
     rasaEndpoint = 'http://localhost:5005/model/parse'

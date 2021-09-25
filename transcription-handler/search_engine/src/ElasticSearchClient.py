@@ -3,7 +3,7 @@ import re
 from elasticsearch import Elasticsearch
 from elasticsearch.connection import create_ssl_context
 from elasticsearch.connection.http_requests import RequestsHttpConnection
-from config import ES_HOSTS, USE_SSL
+from .config import ES_HOSTS, USE_SSL
 
 class ElasticSearchClient():
     
