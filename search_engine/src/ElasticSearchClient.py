@@ -31,7 +31,6 @@ class ElasticSearchClient():
 
         return self.__search__(query, index_name, page_size)
 
-
     def keyword_search(
         self, keywords: List[str],
         index_name: str = None,
