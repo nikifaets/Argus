@@ -1,0 +1,17 @@
+version: "2.0"
+
+nlu:
+- intent: action
+  examples: |
+    - Do you want to
+    - Does he want to
+    - Would you want to
+    - Would you like to
+    - Can you
+    - Could you
+- intent: else
+  examples: |
+    - How are you
+    - Hello colleagues
+    - What is the weather
+    - What do you feel
