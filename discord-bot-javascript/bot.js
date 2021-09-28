@@ -122,7 +122,7 @@ client.on("message", async message => {
 
             userBucket[user.id].push(audioFileName);
 
-            console.log("null ? " + JSON.stringify(userBucket))
+            //console.log("null ? " + JSON.stringify(userBucket))
             audio.pipe(fs.createWriteStream(audioFileName, { flags: 'a' }));
 
             audio.on('end', async () => {
@@ -132,7 +132,6 @@ client.on("message", async message => {
                     if (!err && stat.size) {
                         const file = fs.readFileSync(audioFileName);
                         audioBytesLength += file.byteLength;
-                        console.log(audioFileName + " : " + audioBytesLength);
 
                         if (audioBytesLength <= 800000) {
                             return;
@@ -142,7 +141,7 @@ client.on("message", async message => {
                         oldName = audioFileName
 
 
-                        console.log(userBucket[user.id])
+                        //console.log(userBucket[user.id])
 
                         let res = await concactenatePcm(userBucket[user.id])
                         userBucket[user.id] = []
@@ -174,7 +173,28 @@ client.on("message", async message => {
                             console.log(transcription)
                             axios.post('http://10.15.3.0:5000/recommendation', transcription)
                                 .then(res => {
-                                    console.log("response: " + JSON.stringify(res.data))
+                                    if (res.data === "listening") console.log("listening")
+                                    if (res.data !== "" && res.data !== "listening" && res.data !== undefined) {
+                                        const embed = new Discord.MessageEmbed()
+                                        .setTitle(`Hey ${user.username}, Argus found this solution to a similar problem you mentioned!`)
+                                        .setAuthor(res.data.title, "https://media.istockphoto.com/vectors/default-profile-picture-avatar-photo-placeholder-vector-illustration-vector-id1223671392?k=20&m=1223671392&s=612x612&w=0&h=lGpj2vWAI3WUT1JeJWm1PRoHT3V15_1pdcTn2szdwQ0=")
+                                        /*
+                                        * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
+                                        */
+                                       .setColor(0x00AE86)
+                                       .setDescription(res.data.description)
+                                       .setFooter("Traversing your knowledge network!", "https://cdn.icon-icons.com/icons2/2249/PNG/512/eye_check_outline_icon_139629.png")
+                                       .setImage(res.data.image)
+                                       /*
+                                       * Takes a Date object, defaults to current date.
+                                       */
+                                      .setTimestamp()
+                                      .setURL(res.data.url)
+                                     
+                                     message.channel.send({ embed });
+                                    }
+                                    }).catch(err => {
+                                    console.log(err)
                                 });
                         })
                     }
