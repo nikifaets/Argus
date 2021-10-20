@@ -1,3 +1,5 @@
+# Argus
+
 ## Inspiration
 
 The path to success, mainly lies within efficiency, productivity and organization. Success often is followed by rapid growth, which in turn decreases efficiency and productivity as the organization becomes harder to manage. Different teams start working on the same tasks, work is repeated and company knowledge networks are under utilized.
